@@ -12,5 +12,5 @@
 clone  the project into your desire folders using the following command 
 
 ```
-git clones https
+git clones <remote-link>
 ```
