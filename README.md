@@ -13,4 +13,11 @@ clone  the project into your desire folders using the following command
 
 ```
 git clones <remote-link>
+
 ```
+
+<!-- $ git push origin master
+Username for 'https://github.com': your_user_name
+Password for 'https://your_user_name@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/your_user_name/repo_name.git/' -->
