@@ -1,7 +1,9 @@
 # WORDY - A Mini Nodejs Blog Project
 
-**WORDY is a mini blog project that is in javascript and built usig Express on top Nodejs runtime environment**
+**WORDY is a mini blog project that is in javascript and built using Express on top Nodejs runtime environment**
 **WORDY is a projected that was during cholatrek  cohort 2.1 Training under Nodejs and Express Stack.**
+
+You can visit this link to be able to create something like this "https://cholatrek.io"
 
 **WORDY is a mini blog that is built with Nodejs and express framework Wordy allows anyone to publish a blog without having to undergo any validation**
 
