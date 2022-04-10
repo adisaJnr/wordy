@@ -12,12 +12,9 @@ const bodyParser = require('body-parser');
 
 const dotenv = require('dotenv').config();
 
-const PORT = process.env.PORT || 5500;
-
-
-
-
 const app = express();
+
+const PORT = process.env.PORT || 5500;
 
 // setting the default views
 app.set('view engine' ,'ejs');
