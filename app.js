@@ -25,8 +25,7 @@ app.use(express.static('./public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-dburi =
-  "mongodb+srv://Joshman:Joshman@joshua.v1ym4.mongodb.net/wordy?retryWrites=true&w=majority";
+dburi = process.env.MONGO_URI;
 mongoose
   .connect(dburi, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((result) => {
