@@ -10,6 +10,12 @@ const { mainRouter } = require('./routes/mainRoute')
 
 const bodyParser = require('body-parser');
 
+const dotenv = require('dotenv').config();
+
+const PORT = process.env.PORT || 5500;
+
+
+
 
 const app = express();
 
@@ -27,8 +33,8 @@ dburi =
 mongoose
   .connect(dburi, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((result) => {
-    app.listen(5000, () => {
-      console.log("Connected to server");
+    app.listen(PORT, () => {
+      console.log(`Connected to server on port ${PORT}`);
     });
   })
   .catch((error) => console.log(error));
