@@ -18,6 +18,9 @@ git clones <remote-link>
 
 ```
 
+
+Do well to star my Project
+
 <!-- $ git push origin master
 Username for 'https://github.com': your_user_name
 Password for 'https://your_user_name@github.com': 
