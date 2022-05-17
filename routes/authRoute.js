@@ -10,7 +10,9 @@ const authController = require('../controller/authController');
  //new post
  authRouter.get('/register',authController.renderregisterUser);
  authRouter.post('/register',authController.registerUser);
- authRouter.get('/signin',authController.renderloginUser)
+ authRouter.get('/signin',authController.renderloginUser);
+ authRouter.post('/signin',authController.loginUser);
+//  authRouter.get('/dash',authController.dashboard);
 
 
 

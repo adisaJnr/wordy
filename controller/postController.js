@@ -12,7 +12,6 @@ const get_new_post_form = (req,res)=>{
 const publish_new_post = async(req,res)=>{
     try {
         const post = new Post (req.body);
-
         result = await post.save();
         res.redirect('/');
     } catch (error) {

@@ -20,6 +20,8 @@ const cors = require("cors");
 
 const flash = require("connect-flash");
 
+const { dashRouter } = require("./routes/dashRoute");
+
 const app = express();
 
 const PORT = process.env.PORT || 5500;
@@ -54,6 +56,8 @@ mongoose
 // everything related to CRUD posts
 app.use("/posts", postRouter);
 app.use("/auth", authRouter);
+
+app.use("/user", dashRouter);
 
 // everything related to home about and 404
 app.use(mainRouter);
