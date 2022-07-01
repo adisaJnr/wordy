@@ -1,114 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head') %>
 
-  <body>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
-      <symbol id="check" viewBox="0 0 16 16">
-        <title>Check</title>
-        <path
-          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
-        />
-      </symbol>
-    </svg>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=7">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= user.firstname %>'s Dashboard
+  </title>
+  <link href="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/vendor/bootstrap/css/bootstrap.min.css"
+    rel="stylesheet">
+  <link href="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+    rel="stylesheet">
+  <link href="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/vendor/boxicons/css/boxicons.min.css"
+    rel="stylesheet">
+  <link href="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/vendor/remixicon/remixicon.css"
+    rel="stylesheet">
+  <link href="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/vendor/simple-datatables/style.css"
+    rel="stylesheet">
+  <link href="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/css/style.css" rel="stylesheet">
+  <title> Wordy || Mini NodeJs </title>
+</head>
 
-    <div class="container py-3">
-      <%- include('../partials/header.ejs') %>
-      <main>
-        <div class="container">
-          <%- include('../partials/flash.ejs') %>
-          <div class="pagetitle">
-            <h1>Dashboard</h1>
-            <nav>
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item active">Profile</li>
-              </ol>
-            </nav>
-          </div>
-
-        <section class="section profile">
-          <div class="row">
-            <div class="col-xl-4">
-
-              <div class="card">
-                <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-
-                  <img style="width: 60%; height: 60%;" src="/img/photo.jpg" alt="Profile" class="rounded-circle">
-                  <h2><%= name %> <%= lname %> </h2>
-                  <h5>Josh Babe</h5>
-                  <div class="social-links mt-2">
-                    <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+    <symbol id="check" viewBox="0 0 16 16">
+      <title>Check</title>
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+  </svg>
+  <div class="container py-3">
+    <%- include('../partials/header.ejs') %>
+      <%- include('../partials/flash') %>
+        <main id="main" class="main">
+          <section class="section profile">
+            <div class="row">
+              <div class="col-xl-4">
+                <div class="card">
+                  <div class="card-body profile-card pt-4 d-flex flex-column align-items-center"> <img
+                      src="<%= user.image %> " alt="Profile" class="rounded-circle">
+                    <h2>
+                      <%= user.firstname %>
+                        <%= user.lastname %>
+                    </h2>
                   </div>
                 </div>
               </div>
-
-            </div>
-
-            <div class="col-xl-8">
-
-              <div class="card">
-                <div class="card-body pt-3">
-                  <!-- Bordered Tabs -->
-                  <ul class="nav nav-tabs nav-tabs-bordered">
-
-                    <li class="nav-item">
-                      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
-                    </li>
-
-                    <li class="nav-item">
-                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
-                    </li>
-
-                    <li class="nav-item">
-                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>
-                    </li>
-
-                    <li class="nav-item">
-                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
-                    </li>
-
-                  </ul>
-                  <div class="tab-content pt-2">
-
-
-                      <h5 class="card-title">Profile Details</h5>
-
-                      <div class="row">
-                        <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                        <div class="col-lg-9 col-md-8"><%= name %> <%= lname %></div>
+              <div class="col-xl-8">
+                <div class="card">
+                  <div class="card-body pt-3">
+                    <ul class="nav nav-tabs nav-tabs-bordered">
+                      <li class="nav-item"> <button class="nav-link active" data-bs-toggle="tab"
+                          data-bs-target="#profile-overview">Overview</button></li>
+                      <li class="nav-item"> <button class="nav-link" data-bs-toggle="tab"
+                          data-bs-target="#profile-edit">Edit Profile</button></li>
+                      <li class="nav-item"> <button class="nav-link" data-bs-toggle="tab"
+                          data-bs-target="#profile-change-password">Change Password</button></li>
+                    </ul>
+                    <div class="tab-content pt-2">
+                      <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                        <h5 class="card-title">About</h5>
+                        <p class="small fst-italic">
+                          <%= user.about %>
+                        </p>
+                        <h5 class="card-title">Profile Details</h5>
+                        <div class="row">
+                          <div class="col-lg-3 col-md-4 label ">Full Name</div>
+                          <div class="col-lg-9 col-md-8">
+                            <%= user.firstname %>
+                              <%= user.lastname %>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-3 col-md-4 label">Phone Number</div>
+                          <div class="col-lg-9 col-md-8">
+                            <%= user.phone %>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-3 col-md-4 label">Email</div>
+                          <div class="col-lg-9 col-md-8">
+                            <%= user.email %>
+                          </div>
+                        </div>
                       </div>
-
-
-                      <div class="row">
-                        <div class="col-lg-3 col-md-4 label">Email</div>
-                        <div class="col-lg-9 col-md-8"><%= email %> </div>
+                      <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                        <form action="/auth/update" method="post" enctype="multipart/form-data">
+                          <div class="row mb-3"> <label for="profileImage"
+                              class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                            <div class="col-md-8 col-lg-9"> <img src="<%= user.image %> ">
+                              <input class="form-control" type="file" id="formFile" name="image" accept="image/*">
+                            </div>
+                            <div class="row mb-3"> <label for="firstname" class="col-md-4 col-lg-3 col-form-label">First
+                                Name</label>
+                              <div class="col-md-8 col-lg-9"> <input name="firstname" type="text" class="form-control"
+                                  id="firstname" value="<%= user.firstname %> "></div>
+                            </div>
+                            <div class="row mb-3"> <label for="lastname" class="col-md-4 col-lg-3 col-form-label">Last
+                                Name</label>
+                              <div class="col-md-8 col-lg-9"> <input name="lastname" type="text" class="form-control"
+                                  id="lastname" value="<%= user.lastname %> "></div>
+                            </div>
+                            <div class="row mb-3"> <label for="about"
+                                class="col-md-4 col-lg-3 col-form-label">About</label>
+                              <div class="col-md-8 col-lg-9"><textarea name="about" class="form-control" id="about"
+                                  style="height: 100px"> <%= user.about %> </textarea>
+                              </div>
+                            </div>
+                            <div class="row mb-3"> <label for="Phone"
+                                class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                              <div class="col-md-8 col-lg-9"> <input name="phone" type="text" class="form-control"
+                                  id="Phone" value="<%= user.phone %> "></div>
+                            </div>
+                            <div class="row mb-3"> <label for="Email"
+                                class="col-md-4 col-lg-3 col-form-label">Email</label>
+                              <div class="col-md-8 col-lg-9"> <input name="email" type="email" class="form-control"
+                                  id="Email" value="<%= user.email %> "></div>
+                            </div>
+                            <div class="text-center"> <button type="submit" class="btn btn-primary">Save
+                                Changes</button>
+                            </div>
+                        </form>
                       </div>
-
+                      <div class="tab-pane fade profile-change-password pt-3" id="profile-change-password">
+                        <form action="/auth/update/password" method="post">
+                          <div class="row mb-3"> <label for="currentPassword"
+                              class="col-md-4 col-lg-3 col-form-label">Current Password</label>
+                            <div class="col-md-8 col-lg-9"> <input name="currentPassword" type="password" class="form-control"
+                                id="currentPassword"></div>
+                          </div>
+                          <div class="row mb-3"> <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New
+                              Password</label>
+                            <div class="col-md-8 col-lg-9"> <input name="newPassword" type="password"
+                                class="form-control" id="newPassword"></div>
+                          </div>
+                          <div class="row mb-3"> <label for="confirmPassword"
+                              class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
+                            <div class="col-md-8 col-lg-9"> <input name="confirmPassword" type="password"
+                                class="form-control" id="confirmPassword"></div>
+                          </div>
+                          <div class="text-center"> <button type="submit" class="btn btn-primary">Change
+                              Password</button></div>
+                        </form>
+                      </div>
                     </div>
-
-
-
-                  </div><!-- End Bordered Tabs -->
-
+                  </div>
                 </div>
               </div>
-
             </div>
-          </div>
-        </section>
-        <div>
-          <a href="../views/signin.ejs">
-            <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">LOG OUT</button>
-          </a>
-        </div>
-        </div>
-      </main>
+          </section>
+        </main>
 
-      <%- include('../partials/footer.ejs') %>
-    </div>
-  </body>
-</html> 
+        <%- include('../partials/footer.ejs') %>
+  </div>
+</body>
+
+<script
+  src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/vendor/chart.js/chart.min.js"></script>
+<script src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/vendor/echarts/echarts.min.js"></script>
+<script src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/vendor/quill/quill.min.js"></script>
+<script
+  src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/vendor/tinymce/tinymce.min.js"></script>
+
+</html>

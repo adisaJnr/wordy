@@ -26,6 +26,7 @@ const userSchema = new Schema(
     },
     phone: String,
     about: String,
+    image: String,
   },
   { timestamps: true }
 );

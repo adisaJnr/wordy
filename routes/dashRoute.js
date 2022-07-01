@@ -1,11 +1,11 @@
-const express = require('express');
+// const express = require('express');
 
 // creating the router
-const dashRouter = express.Router();
-const dashController = require('../controller/dashController');
+// const dashRouter = express.Router();
+// const dashController = require('../controller/dashController');
 
 // profile 
-dashRouter.get('/dash', dashController.profile);
+// dashRouter.get('/dash', dashController.profile);
 
 // exporting our dash router
-module.exports = { dashRouter }; 
+// module.exports = { dashRouter }; 

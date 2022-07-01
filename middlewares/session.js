@@ -3,6 +3,7 @@ const session = require('express-session');
 const dotenv = require("dotenv").config();
 
 const MongoStore = require('connect-mongo');
+// const { User } = require('../models/user');
 
 const newSession = session({ 
     secret: 'supersecret',
@@ -12,4 +13,6 @@ const newSession = session({
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI  })
   });
 
-  module.exports = { newSession };
+
+
+  module.exports = { newSession};
